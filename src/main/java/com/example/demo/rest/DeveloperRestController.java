@@ -30,14 +30,14 @@ public class DeveloperRestController {
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('developers:write)")
+    @PreAuthorize("hasAuthority('developers:write')")
     public Developer create(@RequestBody Developer developer) {
         DEVELOPERS.add(developer);
         return developer;
     }
 
     @DeleteMapping
-    @PreAuthorize("hasAuthority('developers:write)")
+    @PreAuthorize("hasAuthority('developers:write')")
     public void deleteById(@PathVariable Long id) {
         this.DEVELOPERS.removeIf(dev -> dev.getId().equals(id));
     }
